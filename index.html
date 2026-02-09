@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎭 פאנל ניהול סוכנים</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      direction: rtl;
+    }
+
+    .dashboard {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-content h1 {
+      color: #2d3748;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .header-content .subtitle {
+      color: #718096;
+      font-size: 16px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-secondary {
+      background: #edf2f7;
+      color: #4a5568;
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-card .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .stat-card .value {
+      font-size: 36px;
+      font-weight: bold;
+      color: #2d3748;
+      margin-bottom: 5px;
+    }
+
+    .stat-card .label {
+      color: #718096;
+      font-size: 14px;
+    }
+
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .agent-card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .agent-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+    }
+
+    .agent-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .agent-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 20px;
+    }
+
+    .agent-name {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2d3748;
+      margin-bottom: 5px;
+    }
+
+    .agent-platform {
+      display: inline-block;
+      padding: 5px 12px;
+      background: #edf2f7;
+      color: #4a5568;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .agent-status {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .agent-status.active {
+      background: #c6f6d5;
+      color: #22543d;
+    }
+
+    .agent-status.paused {
+      background: #fed7d7;
+      color: #742a2a;
+    }
+
+    .agent-info {
+      margin: 15px 0;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: #718096;
+      font-size: 13px;
+    }
+
+    .info-value {
+      color: #2d3748;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .agent-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .btn-small {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .proxy-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 15px;
+      padding: 10px;
+      background: #f7fafc;
+      border-radius: 8px;
+      font-size: 12px;
+    }
+
+    .proxy-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #48bb78;
+    }
+
+    .proxy-dot.disconnected {
+      background: #f56565;
+    }
+
+    .refresh-indicator {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      font-size: 13px;
+      color: #718096;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .loading {
+      text-align: center;
+      padding: 60px;
+      color: white;
+      font-size: 18px;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .empty-state .icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #2d3748;
+    }
+
+    .modal-close {
+      float: left;
+      font-size: 28px;
+      cursor: pointer;
+      color: #718096;
+    }
+
+    .error-banner {
+      background: #fed7d7;
+      color: #742a2a;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .error-banner.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Error Banner -->
+    <div id="errorBanner" class="error-banner">
+      <strong>⚠️ שגיאה:</strong> <span id="errorMessage"></span>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+      <div class="header-content">
+        <h1>🎭 פאנל ניהול סוכנים</h1>
+        <div class="subtitle">ניהול מרכזי של כל הסוכנים ברשתות החברתיות</div>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-secondary" onclick="refreshData()">
+          🔄 רענן
+        </button>
+        <button class="btn btn-primary" onclick="showAddAgent()">
+          ➕ הוסף סוכן
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="icon">👥</div>
+        <div class="value" id="totalAgents">-</div>
+        <div class="label">סוכנים במערכת</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="icon">✅</div>
+        <div class="value" id="activeAgents">-</div>
+        <div class="label">סוכנים פעילים</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="icon">🌐</div>
+        <div class="value" id="proxiesAvailable">-</div>
+        <div class="label">Proxies זמינים</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="icon">📊</div>
+        <div class="value" id="totalPosts">-</div>
+        <div class="label">פוסטים כוללים</div>
+      </div>
+    </div>
+
+    <!-- Agents Grid -->
+    <div id="agentsContainer">
+      <div class="loading pulse">
+        <div>⏳ טוען נתונים...</div>
+      </div>
+    </div>
+
+    <!-- Refresh Indicator -->
+    <div class="refresh-indicator">
+      <span class="pulse">🔄</span>
+      <span>מתעדכן כל 5 שניות</span>
+      <span id="lastUpdate"></span>
+    </div>
+  </div>
+
+  <!-- Agent Details Modal -->
+  <div id="agentModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <div class="modal-header">פרטי סוכן</div>
+      <div id="agentDetails"></div>
+    </div>
+  </div>
+
+  <script>
+    // API endpoint - replace with your actual endpoint
+    const API_ENDPOINT = 'https://raw.githubusercontent.com/YOUR_USERNAME/social-agents-dashboard/main/data/dashboard-data.json';
+    
+    let lastUpdate = null;
+
+    async function loadData() {
+      try {
+        // Load from GitHub or local file
+        const response = await fetch(API_ENDPOINT + '?' + Date.now());
+        
+        if (!response.ok) {
+          throw new Error('Failed to load data');
+        }
+        
+        const data = await response.json();
+        renderDashboard(data);
+        hideError();
+        lastUpdate = new Date();
+        document.getElementById('lastUpdate').textContent = 
+          `(עודכן: ${lastUpdate.toLocaleTimeString('he-IL')})`;
+      } catch (error) {
+        console.error('Error loading data:', error);
+        showError('לא ניתן לטעון נתונים. בדוק את החיבור לאינטרנט.');
+      }
+    }
+
+    function renderDashboard(data) {
+      // Update stats
+      document.getElementById('totalAgents').textContent = data.totalAgents || 0;
+      document.getElementById('activeAgents').textContent = data.activeAgents || 0;
+      document.getElementById('proxiesAvailable').textContent = data.proxiesAvailable || 0;
+      document.getElementById('totalPosts').textContent = data.totalPosts || 0;
+
+      // Render agents
+      const container = document.getElementById('agentsContainer');
+      
+      if (!data.agents || data.agents.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div class="icon">🤖</div>
+            <h2>אין סוכנים במערכת</h2>
+            <p>הוסף סוכן חדש כדי להתחיל</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = '<div class="agents-grid">' + data.agents.map(agent => `
+        <div class="agent-card">
+          <div class="agent-header">
+            <div>
+              <div class="agent-name">${escapeHtml(agent.persona.name)}</div>
+              <span class="agent-platform">${agent.platform}</span>
+            </div>
+            <span class="agent-status ${agent.status}">${agent.status === 'active' ? 'פעיל' : 'מושהה'}</span>
+          </div>
+
+          <div class="agent-info">
+            <div class="info-row">
+              <span class="info-label">פוסטים</span>
+              <span class="info-value">${agent.stats.posts || 0}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">עוקבים</span>
+              <span class="info-value">${agent.stats.followers || 0}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">לייקים</span>
+              <span class="info-value">${agent.stats.likes || 0}</span>
+            </div>
+          </div>
+
+          ${agent.proxy ? `
+            <div class="proxy-indicator">
+              <span class="proxy-dot"></span>
+              <span>Proxy: ${escapeHtml(agent.proxy)}</span>
+            </div>
+          ` : `
+            <div class="proxy-indicator">
+              <span class="proxy-dot disconnected"></span>
+              <span>ללא Proxy</span>
+            </div>
+          `}
+
+          <div class="agent-actions">
+            <button class="btn-small btn-primary" onclick='viewAgent(${JSON.stringify(agent).replace(/'/g, "&#39;")})'>
+              👁️ פרטים
+            </button>
+            <button class="btn-small btn-secondary" onclick="toggleAgent('${agent.id}')">
+              ${agent.status === 'active' ? '⏸️ השהה' : '▶️ הפעל'}
+            </button>
+          </div>
+        </div>
+      `).join('') + '</div>';
+    }
+
+    function viewAgent(agent) {
+      const details = `
+        <div style="margin-top: 20px;">
+          <h3>🎭 פרסונה</h3>
+          <p><strong>שם:</strong> ${escapeHtml(agent.persona.name)}</p>
+          <p><strong>אופי:</strong> ${escapeHtml(agent.persona.character)}</p>
+          <p><strong>טון:</strong> ${escapeHtml(agent.persona.tone)}</p>
+          <p><strong>נושאים:</strong> ${agent.persona.topics.join(', ')}</p>
+          
+          <h3 style="margin-top: 20px;">📊 סטטיסטיקות</h3>
+          <p><strong>פוסטים:</strong> ${agent.stats.posts || 0}</p>
+          <p><strong>עוקבים:</strong> ${agent.stats.followers || 0}</p>
+          <p><strong>לייקים:</strong> ${agent.stats.likes || 0}</p>
+          <p><strong>תגובות:</strong> ${agent.stats.comments || 0}</p>
+          
+          <h3 style="margin-top: 20px;">⚙️ אוטומציה</h3>
+          <p><strong>פרסום:</strong> ${agent.automation.posting ? '✅ פעיל' : '❌ כבוי'}</p>
+          <p><strong>אינטראקציות:</strong> ${agent.automation.engagement ? '✅ פעיל' : '❌ כבוי'}</p>
+        </div>
+      `;
+      
+      document.getElementById('agentDetails').innerHTML = details;
+      document.getElementById('agentModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('agentModal').classList.remove('active');
+    }
+
+    function toggleAgent(agentId) {
+      alert(`שינוי סטטוס עבור: ${agentId}\n\nכדי לשנות סטטוס, הרץ:\nnode agent-cli.js toggle ${agentId}`);
+    }
+
+    function showAddAgent() {
+      alert('כדי להוסיף סוכן חדש, הרץ:\nnode agent-cli.js add');
+    }
+
+    function refreshData() {
+      loadData();
+    }
+
+    function showError(message) {
+      document.getElementById('errorMessage').textContent = message;
+      document.getElementById('errorBanner').classList.add('active');
+    }
+
+    function hideError() {
+      document.getElementById('errorBanner').classList.remove('active');
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Auto-refresh every 5 seconds
+    setInterval(loadData, 5000);
+    
+    // Initial load
+    loadData();
+  </script>
+</body>
+</html>

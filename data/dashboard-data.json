@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-02-09T18:30:42.908Z",
+  "totalAgents": 1,
+  "activeAgents": 1,
+  "proxiesAvailable": 0,
+  "proxiesInUse": 0,
+  "totalPosts": 3,
+  "totalFollowers": 0,
+  "totalLikes": 0,
+  "agents": [
+    {
+      "id": "agent_1770661407158",
+      "platform": "facebook",
+      "status": "active",
+      "persona": {
+        "name": "Fatima El-Husain",
+        "character": "Working mom of two, small business enthusiast, productivity advocate",
+        "tone": "Warm, authentic, inspiring, relatable",
+        "topics": [
+          "family life",
+          "small business",
+          "productivity",
+          "ChatGPT for business",
+          "entrepreneur life"
+        ],
+        "language": "en",
+        "bio": "Mom of 2 amazing kids 👶👧 | Small business advocate 💼 | Sharing tips for busy parents",
+        "interests": [
+          "parenting",
+          "business automation",
+          "AI tools",
+          "work-life balance"
+        ],
+        "style": {
+          "postTypes": [
+            "personal",
+            "inspirational",
+            "educational"
+          ],
+          "hashtagsPerPost": 3,
+          "emojiUsage": "moderate",
+          "postLength": "medium"
+        }
+      },
+      "stats": {
+        "followers": 0,
+        "posts": 3,
+        "likes": 0,
+        "comments": 0,
+        "lastActive": "2026-02-09T18:23:27.158Z"
+      },
+      "proxy": null,
+      "automation": {
+        "posting": true,
+        "engagement": true
+      }
+    }
+  ],
+  "subAgents": [
+    {
+      "agentId": "agent_1770661407158",
+      "name": "Fatima El-Husain",
+      "platform": "facebook",
+      "proxy": "Direct",
+      "status": "active",
+      "spawnedAt": "2026-02-09T18:30:33.388Z"
+    }
+  ]
+}
