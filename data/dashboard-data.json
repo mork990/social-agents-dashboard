@@ -1,145 +1,51 @@
 {
-  "timestamp": "2026-02-09T23:45:01.325Z",
+  "timestamp": "2026-02-09T23:45:32.294Z",
   "totalAgents": 2,
-  "activeAgents": 0,
-  "proxiesAvailable": 0,
-  "proxiesInUse": 0,
-  "totalPosts": 9,
-  "totalFollowers": 0,
-  "totalLikes": 5,
+  "activeAgents": 2,
+  "proxiesAvailable": 1,
+  "proxiesInUse": 1,
+  "totalPosts": 11,
+  "totalFollowers": 1,
+  "totalLikes": 15,
   "agents": [
-  {
-    "id": "agent_1770661407158",
-    "platform": "facebook",
-    "status": "active",
-    "persona": {
+    {
+      "id": "agent_1770661407158",
       "name": "Fatima El-Husain",
-      "character": "Working mom of two, small business enthusiast, productivity advocate",
-      "tone": "Warm, authentic, inspiring, relatable",
-      "topics": [
-        "family life",
-        "small business",
-        "productivity",
-        "ChatGPT for business",
-        "entrepreneur life"
-      ],
-      "language": "en",
-      "bio": "Mom of 2 amazing kids 👶👧 | Small business advocate 💼 | Sharing tips for busy parents",
-      "interests": [
-        "parenting",
-        "business automation",
-        "AI tools",
-        "work-life balance"
-      ],
-      "style": {
-        "postTypes": [
-          "personal",
-          "inspirational",
-          "educational"
-        ],
-        "hashtagsPerPost": 3,
-        "emojiUsage": "moderate",
-        "postLength": "medium"
-      }
-    },
-    "credentials": {
-      "userId": "61584846598354",
-      "email": "9ophuzdufvplejx8@fviainboxes.com",
-      "password": "9t12LMMAsBrHtczDz",
-      "accessToken": "EAAAAUaZA8jlABQGY9DfHiCmOSyChMqWCBnZAJRtiE3hm7dgOPFY64l804UWepZAHlwWJldZClUr6M1AOhtaoHoJ3i7CPa0pr67XzRdi2Moi0ogvgFa94kRla3fwSqli6VJGl7jnvYZAY6yUZAMzl7zZAnOOHOf4yF2fdhnfXh4G3ZABIDrjCvoL9irH1enxRk6BBki87RwZDZD",
-      "cookies": "c_user=61584846598354;xs=46:0YtNLPYJJQIjew:2:1765337246:-1:-1;fr=0OvKzQJAXFmQjDYlx.AWdteHkkzA6qh333shxEzDjLnwV6hD0rFnI69aciGSRMDFHndIQ.BpOOin..AAA.0.0.BpOOin.AWd3xcV-uMbOnM67NHYa50c1JRg;datr=neg4aUY26E5kChhQUOCUWKe5"
-    },
-    "automation": {
-      "posting": {
-        "enabled": true,
-        "frequency": "2 days",
-        "times": [
-          "08:00",
-          "14:00",
-          "20:00"
-        ]
+      "platform": "facebook",
+      "status": "active",
+      "profileUrl": "https://www.facebook.com/profile.php?id=61584846598354",
+      "proxy": "None",
+      "stats": {
+        "posts": 11,
+        "followers": 1,
+        "likes": 15
       },
-      "engagement": {
-        "enabled": true,
-        "likesPerDay": 15,
-        "commentsPerDay": 3,
-        "topics": [
-          "small business tips",
-          "ChatGPT for business",
-          "entrepreneur life",
-          "business automation",
-          "productivity hacks"
-        ]
-      }
+      "lastActivity": "2026-02-09T23:45:32.294Z"
     },
-    "stats": {
-      "followers": 0,
-      "posts": 9,
-      "likes": 5,
-      "comments": 0,
-      "lastActive": "2026-02-09T18:53:50.402Z"
-    },
-    "goals": {},
-    "created": "2026-02-09T18:23:27.158Z"
-  },
-  {
-    "agentId": "agent_1770712820543",
-    "persona": {
-      "firstName": "Nfifnfnxm",
-      "lastName": "Ahmed",
-      "fullName": "Nfifnfnxm Ahmed",
-      "gender": "male",
-      "age": 28,
-      "location": "Unknown",
-      "interests": [
-        "business",
-        "entrepreneurship",
-        "technology",
-        "motivation"
-      ],
-      "bio": "Entrepreneur and tech enthusiast. Sharing insights on business and personal growth.",
-      "personality": "Professional, motivated, ambitious",
-      "language": "English"
-    },
-    "platform": "facebook",
-    "credentials": {
-      "email": "9wf3cn16a0oq0y2a@fviadropinbox.com",
-      "password": "9t12WeoEAJAcPh0kI",
-      "userId": "61584599051979",
-      "accessToken": "EAAAAUaZA8jlABQBLzTUQpPCZBsGbgwn9po0GFRuQtS4EhO9jr6gE95vtepYYq6j2uW2Ki3ZA2BQHXPUXuoNUEExkq9XV8cZCPEcGzMp41txZCMfAv7rGybFlCLB8uGw2xZAMER0iGC43zMbGD3MkGKZAPV35BVouHgRYT8pycqhgda4U6QtqLZCRZA5nD16bZAUrFgHlHkudFlNAZDZD",
-      "cookies": "c_user=61584599051979;xs=12:3nM1PTiuoo3dkA:2:1765342390:-1:-1;fr=0bGAsxxhQhcBE90Cv.AWeQztrZDmqpgsAprMZHueI-j0xXV5FpaVa8K9-q1LoRUDCcMoE.BpOPzB..AAA.0.0.BpOPzB.AWeEyZnFjQe4XJrDpKrFwBHX8kk;datr=tPw4acAQALmpkM_9Xe_P6X_9;"
-    },
-    "proxy": {
+    {
+      "id": "agent_1770712820543",
+      "name": "Nfifnfnxm Ahmed",
+      "platform": "facebook",
+      "status": "active",
+      "profileUrl": "https://www.facebook.com/profile.php?id=61584599051979",
+      "proxy": "46.203.161.35:5532",
+      "stats": {
+        "posts": 0,
+        "followers": 0,
+        "likes": 0
+      },
+      "lastActivity": "2026-02-09T23:45:32.294Z"
+    }
+  ],
+  "proxies": [
+    {
       "host": "46.203.161.35",
       "port": 5532,
-      "username": "enccfecx",
-      "password": "d87tnecql794",
       "type": "http",
-      "enabled": true
-    },
-    "subAgent": {
-      "sessionKey": "agent:main:subagent:7277a074-6f2d-4c34-aab9-6ab99576b15f",
-      "label": "persona_nfifnfnxm_ahmed",
       "status": "active",
-      "createdAt": "2026-02-09T23:07:00Z"
-    },
-    "engagement": {
-      "dailyLikes": 15,
-      "dailyComments": 3,
-      "dailyShares": 1,
-      "dailyPosts": 1,
-      "topics": [
-        "business",
-        "entrepreneurship",
-        "technology",
-        "startup",
-        "motivation"
+      "assignedTo": [
+        "61584599051979"
       ]
-    },
-    "status": "active",
-    "createdAt": "2026-02-09T23:07:00Z",
-    "profileUrl": "https://www.facebook.com/profile.php?id=61584599051979"
-  }
-],
-  "subAgents": null
+    }
+  ]
 }
