@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-09T23:05:02.001Z",
-  "totalAgents": 1,
+  "timestamp": "2026-02-09T23:09:53.548Z",
+  "totalAgents": 2,
   "activeAgents": 0,
   "proxiesAvailable": 0,
   "proxiesInUse": 0,
@@ -81,6 +81,64 @@
     },
     "goals": {},
     "created": "2026-02-09T18:23:27.158Z"
+  },
+  {
+    "agentId": "agent_1770712820543",
+    "persona": {
+      "firstName": "Nfifnfnxm",
+      "lastName": "Ahmed",
+      "fullName": "Nfifnfnxm Ahmed",
+      "gender": "male",
+      "age": 28,
+      "location": "Unknown",
+      "interests": [
+        "business",
+        "entrepreneurship",
+        "technology",
+        "motivation"
+      ],
+      "bio": "Entrepreneur and tech enthusiast. Sharing insights on business and personal growth.",
+      "personality": "Professional, motivated, ambitious",
+      "language": "English"
+    },
+    "platform": "facebook",
+    "credentials": {
+      "email": "9wf3cn16a0oq0y2a@fviadropinbox.com",
+      "password": "9t12WeoEAJAcPh0kI",
+      "userId": "61584599051979",
+      "accessToken": "EAAAAUaZA8jlABQBLzTUQpPCZBsGbgwn9po0GFRuQtS4EhO9jr6gE95vtepYYq6j2uW2Ki3ZA2BQHXPUXuoNUEExkq9XV8cZCPEcGzMp41txZCMfAv7rGybFlCLB8uGw2xZAMER0iGC43zMbGD3MkGKZAPV35BVouHgRYT8pycqhgda4U6QtqLZCRZA5nD16bZAUrFgHlHkudFlNAZDZD",
+      "cookies": "c_user=61584599051979;xs=12:3nM1PTiuoo3dkA:2:1765342390:-1:-1;fr=0bGAsxxhQhcBE90Cv.AWeQztrZDmqpgsAprMZHueI-j0xXV5FpaVa8K9-q1LoRUDCcMoE.BpOPzB..AAA.0.0.BpOPzB.AWeEyZnFjQe4XJrDpKrFwBHX8kk;datr=tPw4acAQALmpkM_9Xe_P6X_9;"
+    },
+    "proxy": {
+      "host": "46.203.161.35",
+      "port": 5532,
+      "username": "enccfecx",
+      "password": "d87tnecql794",
+      "type": "http",
+      "enabled": true
+    },
+    "subAgent": {
+      "sessionKey": "agent:main:subagent:7277a074-6f2d-4c34-aab9-6ab99576b15f",
+      "label": "persona_nfifnfnxm_ahmed",
+      "status": "active",
+      "createdAt": "2026-02-09T23:07:00Z"
+    },
+    "engagement": {
+      "dailyLikes": 15,
+      "dailyComments": 3,
+      "dailyShares": 1,
+      "dailyPosts": 1,
+      "topics": [
+        "business",
+        "entrepreneurship",
+        "technology",
+        "startup",
+        "motivation"
+      ]
+    },
+    "status": "active",
+    "createdAt": "2026-02-09T23:07:00Z",
+    "profileUrl": "https://www.facebook.com/profile.php?id=61584599051979"
   }
 ],
   "subAgents": null
