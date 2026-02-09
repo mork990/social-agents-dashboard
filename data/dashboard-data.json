@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-02-09T18:30:42.908Z",
+  "timestamp": "2026-02-09T18:53:55.411Z",
   "totalAgents": 1,
   "activeAgents": 1,
   "proxiesAvailable": 0,
   "proxiesInUse": 0,
-  "totalPosts": 3,
+  "totalPosts": 9,
   "totalFollowers": 0,
-  "totalLikes": 0,
+  "totalLikes": 5,
   "agents": [
     {
       "id": "agent_1770661407158",
@@ -44,10 +44,10 @@
       },
       "stats": {
         "followers": 0,
-        "posts": 3,
-        "likes": 0,
+        "posts": 9,
+        "likes": 5,
         "comments": 0,
-        "lastActive": "2026-02-09T18:23:27.158Z"
+        "lastActive": "2026-02-09T18:53:50.402Z"
       },
       "proxy": null,
       "automation": {
