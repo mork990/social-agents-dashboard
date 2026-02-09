@@ -1,69 +1,87 @@
 {
-  "timestamp": "2026-02-09T19:09:46.497Z",
+  "timestamp": "2026-02-09T20:14:56.005Z",
   "totalAgents": 1,
-  "activeAgents": 1,
+  "activeAgents": 0,
   "proxiesAvailable": 0,
   "proxiesInUse": 0,
   "totalPosts": 9,
   "totalFollowers": 0,
   "totalLikes": 5,
   "agents": [
-    {
-      "id": "agent_1770661407158",
-      "platform": "facebook",
-      "status": "active",
-      "persona": {
-        "name": "Fatima El-Husain",
-        "character": "Working mom of two, small business enthusiast, productivity advocate",
-        "tone": "Warm, authentic, inspiring, relatable",
-        "topics": [
-          "family life",
-          "small business",
-          "productivity",
-          "ChatGPT for business",
-          "entrepreneur life"
-        ],
-        "language": "en",
-        "bio": "Mom of 2 amazing kids 👶👧 | Small business advocate 💼 | Sharing tips for busy parents",
-        "interests": [
-          "parenting",
-          "business automation",
-          "AI tools",
-          "work-life balance"
-        ],
-        "style": {
-          "postTypes": [
-            "personal",
-            "inspirational",
-            "educational"
-          ],
-          "hashtagsPerPost": 3,
-          "emojiUsage": "moderate",
-          "postLength": "medium"
-        }
-      },
-      "stats": {
-        "followers": 0,
-        "posts": 9,
-        "likes": 5,
-        "comments": 0,
-        "lastActive": "2026-02-09T18:53:50.402Z"
-      },
-      "proxy": null,
-      "automation": {
-        "posting": true,
-        "engagement": true
-      }
-    }
-  ],
-  "subAgents": [
-    {
-      "agentId": "agent_1770661407158",
+  {
+    "id": "agent_1770661407158",
+    "platform": "facebook",
+    "status": "active",
+    "persona": {
       "name": "Fatima El-Husain",
-      "platform": "facebook",
-      "proxy": "Direct",
-      "status": "active",
-      "spawnedAt": "2026-02-09T18:30:33.388Z"
-    }
-  ]
+      "character": "Working mom of two, small business enthusiast, productivity advocate",
+      "tone": "Warm, authentic, inspiring, relatable",
+      "topics": [
+        "family life",
+        "small business",
+        "productivity",
+        "ChatGPT for business",
+        "entrepreneur life"
+      ],
+      "language": "en",
+      "bio": "Mom of 2 amazing kids 👶👧 | Small business advocate 💼 | Sharing tips for busy parents",
+      "interests": [
+        "parenting",
+        "business automation",
+        "AI tools",
+        "work-life balance"
+      ],
+      "style": {
+        "postTypes": [
+          "personal",
+          "inspirational",
+          "educational"
+        ],
+        "hashtagsPerPost": 3,
+        "emojiUsage": "moderate",
+        "postLength": "medium"
+      }
+    },
+    "credentials": {
+      "userId": "61584846598354",
+      "email": "9ophuzdufvplejx8@fviainboxes.com",
+      "password": "9t12LMMAsBrHtczDz",
+      "accessToken": "EAAAAUaZA8jlABQGY9DfHiCmOSyChMqWCBnZAJRtiE3hm7dgOPFY64l804UWepZAHlwWJldZClUr6M1AOhtaoHoJ3i7CPa0pr67XzRdi2Moi0ogvgFa94kRla3fwSqli6VJGl7jnvYZAY6yUZAMzl7zZAnOOHOf4yF2fdhnfXh4G3ZABIDrjCvoL9irH1enxRk6BBki87RwZDZD",
+      "cookies": "c_user=61584846598354;xs=46:0YtNLPYJJQIjew:2:1765337246:-1:-1;fr=0OvKzQJAXFmQjDYlx.AWdteHkkzA6qh333shxEzDjLnwV6hD0rFnI69aciGSRMDFHndIQ.BpOOin..AAA.0.0.BpOOin.AWd3xcV-uMbOnM67NHYa50c1JRg;datr=neg4aUY26E5kChhQUOCUWKe5"
+    },
+    "automation": {
+      "posting": {
+        "enabled": true,
+        "frequency": "2 days",
+        "times": [
+          "08:00",
+          "14:00",
+          "20:00"
+        ]
+      },
+      "engagement": {
+        "enabled": true,
+        "likesPerDay": 15,
+        "commentsPerDay": 3,
+        "topics": [
+          "small business tips",
+          "ChatGPT for business",
+          "entrepreneur life",
+          "business automation",
+          "productivity hacks"
+        ]
+      }
+    },
+    "stats": {
+      "followers": 0,
+      "posts": 9,
+      "likes": 5,
+      "comments": 0,
+      "lastActive": "2026-02-09T18:53:50.402Z"
+    },
+    "goals": {},
+    "created": "2026-02-09T18:23:27.158Z"
+  }
+],
+  "subAgents": null
 }
