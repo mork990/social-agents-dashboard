@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-10T19:55:01.209Z",
+  "timestamp": "2026-02-10T20:00:01.770Z",
   "totalAgents": 2,
   "activeAgents": 2,
   "proxiesAvailable": 1,
@@ -9,7 +9,7 @@
   "totalLikes": 15,
   "lastCronRuns": {
     "facebookEngagement": "2026-02-10T14:01:08.785Z",
-    "dashboardUpdate": "2026-02-10T19:50:02.180Z"
+    "dashboardUpdate": "2026-02-10T19:55:01.727Z"
   },
   "agents": [
     {
@@ -24,7 +24,7 @@
         "followers": 1,
         "likes": 15
       },
-      "lastActivity": "2026-02-10T19:55:01.209Z"
+      "lastActivity": "2026-02-10T20:00:01.770Z"
     },
     {
       "id": "agent_1770712820543",
@@ -38,7 +38,7 @@
         "followers": 0,
         "likes": 0
       },
-      "lastActivity": "2026-02-10T19:55:01.209Z"
+      "lastActivity": "2026-02-10T20:00:01.770Z"
     }
   ],
   "proxies": [
