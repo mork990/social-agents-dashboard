@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-10T08:33:05.049Z",
+  "timestamp": "2026-02-10T08:33:49.517Z",
   "totalAgents": 2,
   "activeAgents": 2,
   "proxiesAvailable": 1,
@@ -24,7 +24,7 @@
         "followers": 1,
         "likes": 15
       },
-      "lastActivity": "2026-02-10T08:33:05.049Z"
+      "lastActivity": "2026-02-10T08:33:49.517Z"
     },
     {
       "id": "agent_1770712820543",
@@ -38,7 +38,7 @@
         "followers": 0,
         "likes": 0
       },
-      "lastActivity": "2026-02-10T08:33:05.049Z"
+      "lastActivity": "2026-02-10T08:33:49.517Z"
     }
   ],
   "proxies": [
